@@ -10,6 +10,7 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
+  isEmptyCart = this.cartService.isEmptyCart();
 
   checkoutForm = this.formBuilder.group({
     name: '',
@@ -23,9 +24,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  testClick() {
-    window.alert('click work!');
-  }
   onSubmit(): void {
     // Process checkout data here
     this.items = this.cartService.clearCart();

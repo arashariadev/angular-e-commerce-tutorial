@@ -17,6 +17,10 @@ export class CartService {
     return this.items;
   }
 
+  isEmptyCart() {
+    return this.items.length == 0;
+  }
+
   clearCart() {
     this.items = [];
     return this.items;
