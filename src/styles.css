@@ -147,3 +147,23 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
+
+
+/* Add-on Styles by Ethan */
+.flex-group {
+  display: flex;
+  align-items: center;
+}
+
+.flex-group > :not([hidden]) ~ :not([hidden]) {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+.product-card {
+  /* border: 1px solid #f0f0f0; */
+  border-radius: .375rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f0f0f0;
+}

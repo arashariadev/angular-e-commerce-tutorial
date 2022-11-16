@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products" class="product-card">
   <h3>
     <a
       [title]="product.name + ' details'"
@@ -11,12 +11,14 @@
   </h3>
   <p *ngIf="product.description">Description: {{ product.description }}</p>
 
-  <button type="button" (click)="share()">Share</button>
+  <div class="flex-group">
+    <button type="button" (click)="share()">Share</button>
 
-  <app-product-alerts
-    [product]="product"
-    (notify)="onNotify()"
-  ></app-product-alerts>
+    <app-product-alerts
+      [product]="product"
+      (notify)="onNotify()"
+    ></app-product-alerts>
+  </div>
 </div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
