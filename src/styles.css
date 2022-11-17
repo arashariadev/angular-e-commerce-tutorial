@@ -149,7 +149,7 @@ can be found in the LICENSE file at https://angular.io/license
 */
 
 
-/* Add-on Styles by Ethan */
+/* [START] Add-on Styles by Ethan */
 .flex-group {
   display: flex;
   align-items: center;
@@ -167,3 +167,7 @@ can be found in the LICENSE file at https://angular.io/license
   margin-bottom: 1rem;
   background-color: #f0f0f0;
 }
+
+
+
+/* [END] Add-on Styles by Ethan */

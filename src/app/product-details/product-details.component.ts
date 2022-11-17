@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product, products } from '../products';
 import { CartService } from '../cart.service';
+import { DynamicBreadcrumbService } from '../dynamic-breadcrumb.service';
 
 @Component({
   selector: 'app-product-details',
@@ -13,8 +14,9 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService
-  ) {}
+    private cartService: CartService,
+    private dynamicBreadcrumbService: DynamicBreadcrumbService
+  ) { }
 
   ngOnInit(): void {
     // Get the product id from the current route
@@ -25,6 +27,10 @@ export class ProductDetailsComponent implements OnInit {
     this.product = products.find(
       (product) => product.id === productIdFromRoute
     );
+
+    // Update breadcrum dynamically
+    const breadcrumbLabel = { productName: this.product?.name};
+    this.dynamicBreadcrumbService.updateBreadCrumbLabels(breadcrumbLabel);
   }
 
   addToCart(product: Product) {

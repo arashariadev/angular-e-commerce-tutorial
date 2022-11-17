@@ -1,0 +1,17 @@
+/* Style the breadcrumb list */
+ul.breadcrumb {
+    /* padding: 1rem; */
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Style the breadcrumb list items */
+ul.breadcrumb li {
+    display: inline-block;
+}
+
+/* Add a symbol(>) between each breadcrumb list items */
+ul.breadcrumb li+li:before {
+    content: "\003E";
+    padding: 0 .5rem;
+}

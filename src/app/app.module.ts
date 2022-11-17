@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,18 +11,41 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { DynamicBreadcrumbComponent } from './dynamic-breadcrumb/dynamic-breadcrumb.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'products', pathMatch:'full'},
+  {
+    path: 'products', 
+    data: {
+      breadcrumb: 'Products',
+    },
+    children: [
+      {
+        path: '',
+        component: ProductListComponent,
+      },
+      {
+        path: ':productId',
+        component: ProductDetailsComponent,
+        data: {
+          breadcrumb: '{{productName}}',
+        }
+      }
+    ]
+  },
+  // { path: 'products', component: ProductListComponent },
+  // { path: 'products/:productId', component: ProductDetailsComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'shipping', component: ShippingComponent },
+]
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component: ProductDetailsComponent },
-      { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent },
-    ]),
+    RouterModule.forRoot(routes),
   ],
   declarations: [
     AppComponent,
@@ -32,10 +55,11 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    DynamicBreadcrumbComponent,
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 
 /*
 Copyright Google LLC. All Rights Reserved.
