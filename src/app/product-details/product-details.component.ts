@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit {
     );
 
     // Update breadcrum dynamically
-    const breadcrumbLabel = { productName: this.product?.name};
+    const breadcrumbLabel = { productName: this.product?.name };
     this.dynamicBreadcrumbService.updateBreadCrumbLabels(breadcrumbLabel);
   }
 
