@@ -8,6 +8,7 @@
 
 # Add-on Features/Functionalities
 - Add `isEmptyCart` method in `CartService` to able to check if current cart is empty
+- Add `getCartCount` and `setCartCount` in `CartService` to display cart count in top bar
 - Conditional template rendering in `Cart` template based on `isEmptyCart`
 - CSS update
 - Add breadcrumb based on [this post written by Zhiyue Yi](https://dev.to/zhiyueyi/create-a-simple-breadcrumb-in-angular-ag5). I made some additional updates on this part:
