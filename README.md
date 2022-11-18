@@ -8,6 +8,7 @@
 
 # Add-on Features/Functionalities
 - Add `isEmptyCart` method in `CartService` to able to check if current cart is empty
+- Add `getTotalPrice` method in `CartService` to display total of orders
 - Add `getCartCount` and `setCartCount` in `CartService` to display cart count in top bar
 - Conditional template rendering in `Cart` template based on `isEmptyCart`
 - CSS update

@@ -11,6 +11,7 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
   isEmptyCart = this.cartService.isEmptyCart();
+  totalPrice = this.cartService.getTotalPrice();
 
   checkoutForm = this.formBuilder.group({
     name: '',

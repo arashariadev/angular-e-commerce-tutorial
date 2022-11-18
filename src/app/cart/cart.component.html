@@ -6,13 +6,19 @@
 
 <div *ngIf="isEmptyCart; else checkoutBlock">
   <p>
-    Your cart is empty. <a routerLink="/">Explore out products</a> and enjoys!
+    Your cart is empty. <a routerLink="/">Explore our products</a> and enjoys!
   </p>
 </div>
 <ng-template #checkoutBlock>
   <div class="cart-item" *ngFor="let item of items">
     <span>{{ item.name }} </span>
     <span>{{ item.price | currency }}</span>
+  </div>
+  <div class="cart-item">
+    <span><strong>Order Total:</strong></span>
+    <span
+      ><strong>{{ totalPrice | currency }}</strong></span
+    >
   </div>
 
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">

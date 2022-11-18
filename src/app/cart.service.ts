@@ -21,6 +21,14 @@ export class CartService {
     return this.items;
   }
 
+  getTotalPrice() {
+    let total = 0;
+    this.items.forEach(item => {
+      total += item.price;
+    });
+    return total;
+  }
+
   isEmptyCart() {
     return this.items.length == 0;
   }
