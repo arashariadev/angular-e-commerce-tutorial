@@ -50,7 +50,8 @@ export class DynamicBreadcrumbComponent implements OnInit {
   ngOnDestroy() {
     // unsubscribe all subscriptios that inside ngOnInit hook to prevent memory leak
     this.destroy$.next(true);
-    this.destroy$.unsubscribe();
+    this.destroy$.complete();
+    // this.destroy$.unsubscribe();
   }
 
   InitBreadCrumb(): void {
