@@ -3,7 +3,8 @@
 </a>
 
 <a routerLink="/cart" class="button fancy-button"
-  ><i class="material-icons">shopping_cart</i>Go to cart</a
+  ><i class="material-icons">shopping_cart</i>Go to cart 
+  <span *ngIf="cartCount$ | async">({{ cartCount$ | async }})</span></a
 >
 
 <!-- 
