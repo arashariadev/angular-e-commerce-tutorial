@@ -1,10 +1,6 @@
 # angular-e-commerce-tutorial
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-i9jh2f-pbe6mm)
-
-# Getting started with Angular
-
-[Follow the official tutorial](https://angular.io/start) to learn the basic of Angular, following best practices.
+This repo is following [Angular Getting started](https://angular.io/start) to learn the basic of Angular and its best practices. Addionally, I made some modification and enhancement to the replica project to put what I've learned into practice. Feel free to view and edit on [StackBlitz ⚡️](https://stackblitz.com/edit/angular-i9jh2f-pbe6mm).
 
 # Add-on Features/Functionalities
 - Add `isEmptyCart` method in `CartService` to able to check if current cart is empty
